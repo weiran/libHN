@@ -73,6 +73,7 @@
         }
         
         // Set Values
+        newPost.HasVisited = false; //TODO: Update this in the future
         newPost.UrlString = postDict[@"UrlString"] ? postDict[@"UrlString"] : @"";
         newPost.Title = postDict[@"Title"] ? postDict[@"Title"] : @"";
         newPost.Points = postDict[@"Points"] ? [postDict[@"Points"] intValue] : 0;
@@ -170,6 +171,7 @@
         }
         
         // Set Values
+        newPost.HasVisited = false; //TODO: Update this in the future
         newPost.UrlString = postDict[@"UrlString"] ? postDict[@"UrlString"] : @"";
         newPost.Title = postDict[@"Title"] ? postDict[@"Title"] : @"";
         newPost.Points = postDict[@"Points"] ? [postDict[@"Points"] intValue] : 0;

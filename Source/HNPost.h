@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, PostType) {
 @property (nonatomic, retain, readonly) NSString *UrlDomain;
 @property (nonatomic, retain) NSString *Title;
 @property (nonatomic, assign) int Points;
+@property (nonatomic, assign) bool HasVisited;
 @property (nonatomic, assign) int CommentCount;
 @property (nonatomic, retain) NSString *PostId;
 @property (nonatomic, retain) NSString *TimeCreatedString;

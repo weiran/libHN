@@ -115,7 +115,7 @@
 			"E": "\"",
 			"I": "CommentId"
 		}, {
-			"S": "</td><td>",
+			"S": "<tr style=\"height:2px\"></tr><tr><td colspan=\"2\"></td><td>",
 			"E": "</td></tr>",
 			"I": "Text"
 		}],

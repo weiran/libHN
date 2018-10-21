@@ -83,16 +83,19 @@
         }
         
         // Create special comment for it
-        HNComment *newComment = [[HNComment alloc] init];
-        newComment.Level = 0;
-        newComment.Username = cDict[@"Username"] ? cDict[@"Username"] : @"";
-        newComment.TimeCreatedString = cDict[@"Time"] ? cDict[@"Time"] : @"";
-        newComment.Text = [HNUtilities stringByReplacingHTMLEntitiesInText:(cDict[@"Text"] ? cDict[@"Text"] : @"")];
-        newComment.Links = [HNCommentLink linksFromCommentText:newComment.Text];
-        newComment.Type = HNCommentTypeAskHN;
-        newComment.UpvoteURLAddition = upvoteUrl.length>0 ? upvoteUrl : nil;
-        newComment.CommentId = cDict[@"CommentId"] ? cDict[@"CommentId"] : @"";
-        [comments addObject:newComment];
+        NSString *postText = cDict[@"Text"];
+        if (postText != nil) {
+            HNComment *newComment = [[HNComment alloc] init];
+            newComment.Level = 0;
+            newComment.Username = cDict[@"Username"] ? cDict[@"Username"] : @"";
+            newComment.TimeCreatedString = cDict[@"Time"] ? cDict[@"Time"] : @"";
+            newComment.Text = [HNUtilities stringByReplacingHTMLEntitiesInText:(postText ? postText : @"")];
+            newComment.Links = [HNCommentLink linksFromCommentText:newComment.Text];
+            newComment.Type = HNCommentTypeAskHN;
+            newComment.UpvoteURLAddition = upvoteUrl.length>0 ? upvoteUrl : nil;
+            newComment.CommentId = cDict[@"CommentId"] ? cDict[@"CommentId"] : @"";
+            [comments addObject:newComment];
+        }
     }
     
     if (post.Type == PostTypeJobs) {
